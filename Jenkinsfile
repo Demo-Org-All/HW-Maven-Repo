@@ -2,7 +2,7 @@ pipeline
 {
   agent any
     stages{
-      stage('Build'){
+      stage('Build My Hello World Project'){
         steps{
         echo "Hello World Build"
          bat "mvn clean install"
