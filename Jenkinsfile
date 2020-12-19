@@ -5,12 +5,7 @@ pipeline
   }
   agent any
     stages{
-      stage('Build My Hello World Project'){
-        steps{
-        echo "Hello World Build"
-         bat "mvn clean install"
-             }
-                                         }
+      
       stage ('Check Environment Variable')
       {
       
@@ -18,6 +13,15 @@ pipeline
        bat ("set") 
            }
       }
+      
+      
+      stage('Build My Hello World Project'){
+        steps{
+        echo "Hello World Build"
+         bat "mvn clean install"
+             }
+                                         }
+      
   }
 
 
