@@ -15,6 +15,15 @@ pipeline
       }
       
       
+      stage('Get Current User Details'){
+        steps{
+          
+        wrap([$class: 'BuildUser']) {
+    echo "userId=${BUILD_USER_ID},fullName=${BUILD_USER},email=${BUILD_USER_EMAIL}"
+                                    }
+             }
+                                      }
+      
       stage('Build My Hello World Project'){
         steps{
         echo "Hello World Build"
