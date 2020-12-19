@@ -9,14 +9,15 @@ pipeline
         steps{
         echo "Hello World Build"
          bat "mvn clean install"
-        }
-      }
+             }
+                                         }
       stage ('Check Environment Variable')
+      {
       agent any
       steps{
        bat ("set") 
+           }
       }
-  
   }
 
 
