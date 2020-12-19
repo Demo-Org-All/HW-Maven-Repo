@@ -13,7 +13,7 @@ pipeline
                                          }
       stage ('Check Environment Variable')
       {
-      agent any
+      
       steps{
        bat ("set") 
            }
