@@ -11,14 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Step 1 - Build with Maven
+      - name: Step 1 - Un-Install the Application
+        run: del D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\HelloWorld-Maven.war
+        
+      - name: Step 2 - Build with Maven
         run: mvn clean install
       
-      - name: Step 2 - Use the Upload Artifacts with GitHub Action
+      - name: Step 3 - Use the Upload Artifacts with GitHub Action
         uses: actions/upload-artifact@v2.2.4
         with:
            name: assets-for-download
            path: target/*.war
         
-      - name: Step 3 - Deploy to Tomcat
+      - name: Step 4 - Deploy to Tomcat
         run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
