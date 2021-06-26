@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Step 1 - Build with Maven
       - name: Step 2 - Use the Upload Artifacts with GitHub Action
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v2
         with:
            name: assets-for-download
            path: target/*.war
