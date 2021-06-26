@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build with Maven
         run: mvn clean install
-      - name: Copy to tomcat directory
+      - name: Deploy to Tomcat
         run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
