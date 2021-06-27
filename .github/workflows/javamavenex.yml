@@ -58,14 +58,15 @@ jobs:
         with:
            name: assets-for-download
            path: target/*.war
-      
-      - name: Upload to JFrog Artifactory
+          
+      - name: Step 4 - Deploy to Tomcat
+        run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
+
+      - name: Step 5 - Upload to JFrog Artifactory
         # curl -u admin:anshuanik0310N$ -X PUT http://l-0310:8082/artifactory/Actions-Maven/HelloWorld-Maven-v${{ github.run_number }}.war -T target/HelloWorld-Maven.war
         shell: bash
         run:   |
             curl -u admin:anshuanik0310N$ -X PUT http://l-0310:8082/artifactory/Actions-Maven/HelloWorld-Maven-v${{ github.run_number }}.war -T target/HelloWorld-Maven.war 
             pwd
             dir
-      
-      - name: Step 4 - Deploy to Tomcat
-        run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
+
