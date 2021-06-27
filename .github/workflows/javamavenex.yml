@@ -17,7 +17,7 @@ jobs:
            # Destination path
            path: d:\temp\rel
       - name: Archive the WAR file (Create ZIP  file for Release)
-        uses: TheDoctor0/zip-release@0.4.2
+        uses: theDoctor0/zip-release@master
         with:
            filename: Hw-Maven-Repo.zip
       - name: Create Github Release
