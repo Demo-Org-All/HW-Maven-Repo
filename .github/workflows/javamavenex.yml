@@ -19,8 +19,8 @@ jobs:
       - name: Archive the WAR file (Create ZIP  file for Release)
         uses: vimtor/action-zip@v1
         with:
-           files: Hw-Maven-Repo.zip
-           dest: d:\temp\rel
+           files: target\HelloWorld-Maven.war
+           dest: d:\temp\rel\Hw-Maven-Repo.zip
       - name: Create Github Release
         id: create-new-release
         uses: actions/create-release@v1
