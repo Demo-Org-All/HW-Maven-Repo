@@ -17,11 +17,10 @@ jobs:
            # Destination path
            path: d:\temp\rel
       - name: Archive the WAR file (Create ZIP  file for Release)
-        uses: ihiroky/archive-action@v1
+        uses: vimtor/action-zip@v1
         with:
-           root_dir: d:\temp\rel
-           base_dir: d:\temp\rel
-           file_path: Hw-Maven-Repo.zip
+           files: Hw-Maven-Repo.zip
+           dest: d:\temp\rel
       - name: Create Github Release
         id: create-new-release
         uses: actions/create-release@v1
