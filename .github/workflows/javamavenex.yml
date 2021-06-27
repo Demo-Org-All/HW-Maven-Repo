@@ -20,7 +20,7 @@ jobs:
         uses: vimtor/action-zip@v1
         with:
            files: target/HelloWorld-Maven.war
-           dest: d:\temp\rel\Hw-Maven-Repo.zip
+           dest: Hw-Maven-Repo.zip
       - name: Create Github Release
         id: create-new-release
         uses: actions/create-release@v1
@@ -35,7 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: d:\temp\rel\Hw-Maven-Repo.zip
+          asset_path: ${{ github.workspace }}/Hw-Maven-Repo.zip
           asset_name: Hw-Maven-Repo-v${{ github.run_number }}
           asset_content_type: application/zip
   build-project:
