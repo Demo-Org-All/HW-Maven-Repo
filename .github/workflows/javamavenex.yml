@@ -73,6 +73,6 @@ jobs:
             curl -u admin:AKCp8jQnSn8rcSgKvpPDNXixkVgnHr8DC436hrmcWEq3WSghyyBeYFUt3HBfQQqN3XmxxEiu3 -O http://l-0310:8082/artifactory/Actions-Maven/HelloWorld-Maven-v${{ github.run_number }}.war
         
       - name: Step 6 - Deploy to Tomcat
-        run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
-
+        #run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
+        run: copy HelloWorld-Maven-v${{ github.run_number }}.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\HelloWorld-Maven.war
 
