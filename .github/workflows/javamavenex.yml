@@ -5,7 +5,39 @@ name: Java Maven Example
 on: [push]
 
 jobs:
-  build:
+  release-project:
+    name: Release the project 
+    runs-on: self-hosted
+    needs: build-project
+    steps:
+      - name: Download the artifacts 
+        uses: actions/download-artifact@v2.0.10
+        with:
+           name: assets-for-download
+           # Destination path
+           path: d:\temp\rel
+      - name: Archive the WAR file (Create ZIP  file for Release)
+        uses: TheDoctor0/zip-release@0.4.2
+        with:
+           filename: Hw-Maven-Repo.zip
+      - name: Create Github Release
+        id: create-new-release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: v${{ github.run_number }}
+          release_name: Release V${{ github.run_number }}
+      - name: Upload asset to Github Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: d:\temp\Hw-Maven-Repo.zip
+          asset_name: Hw-Maven-Repo-v${{ github.run_number }}
+          asset_content_type: application/zip
+  build-project:
     runs-on: self-hosted
 
     steps:
