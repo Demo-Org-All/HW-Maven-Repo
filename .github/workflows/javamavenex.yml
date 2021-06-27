@@ -50,7 +50,8 @@ jobs:
       - name: Step 2 - Build with Maven
         run: mvn clean install
       
-      
+      - uses: jfrog/setup-jfrog-cli@v1
+      - run: jfrog --version
            
       - name: Step 3 - Use the Upload Artifacts with GitHub Action
         uses: actions/upload-artifact@v2.2.4
