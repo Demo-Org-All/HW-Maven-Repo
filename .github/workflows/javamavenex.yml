@@ -61,7 +61,10 @@ jobs:
       
       - name: Upload to JFrog Artifactory
         # run: curl -u admin:anshuanik0310N$ -X PUT http://l-0310:8082/artifactory/Actions-Maven/HelloWorld-Maven-v${{ github.run_number }}.war -T target/HelloWorld-Maven.war
-        run: d:\temp\art.bat
+        uses: wei/curl@v1
+        with:
+           name: Upload to Artifactory
+           args: --upload-file target/HelloWorld-Maven.war  http://l-0310:8082/artifactory/Actions-Maven/HelloWorld-Maven-v${{ github.run_number }}.war
         
       - name: Step 4 - Deploy to Tomcat
         run: copy D:\actions-runner\_work\HW-Maven-Repo\HW-Maven-Repo\target\HelloWorld-Maven.war D:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps
