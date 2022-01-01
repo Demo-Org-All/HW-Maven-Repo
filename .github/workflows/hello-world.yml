@@ -1,1 +1,9 @@
-#
+name: hello-world
+on: push
+jobs:
+  firstjob:
+     runs-on: self-hosted
+     steps:
+         - name: Printing my name
+           run: echo "Hi Niranjan, Welcome to GitHub Actions"
+
