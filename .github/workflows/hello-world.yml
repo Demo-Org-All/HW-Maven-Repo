@@ -6,4 +6,7 @@ jobs:
      steps:
          - name: Printing my name
            run: echo "Hi Niranjan, Welcome to GitHub Actions"
+           run: echo $GITHUB_REPOSITORY
+           
+           
 
