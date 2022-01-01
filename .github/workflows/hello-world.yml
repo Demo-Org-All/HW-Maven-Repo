@@ -5,7 +5,7 @@ jobs:
      runs-on: self-hosted
      steps:
          - name: Printing my name
-           run: echo ${{GITHUB_REPOSITORY}}
+           run: echo ${{env.GITHUB_REPOSITORY}}
            
            
            
