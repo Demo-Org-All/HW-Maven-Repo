@@ -5,9 +5,10 @@ jobs:
      runs-on: self-hosted
      steps:
          - name: Printing my name
-           run: echo "Hi Niranjan, Welcome to GitHub Actions"
-         - name: Print the GitHub repository used
-           run:  echo ${{github.repository}}
+           run: |
+           echo "Hi Niranjan, Welcome to GitHub Actions"
+           echo ${{github.repository}}
+           
            
            
            
