@@ -19,6 +19,7 @@ jobs:
       with:
            name: assets-for-upload
            path: target/*.war
+           retention-days: 5
 
     - name: Deploy to Tomcat
       run: copy ${env:GITHUB_WORKSPACE}\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
