@@ -13,6 +13,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build with Maven
       run: mvn clean install
+    
+    - name: Upload a build Artifacts with GitHub Action
+    - uses: actions/upload-artifact@v2.3.1
+      with:
+           name: assets-for-upload
+           path: target/*.war
+
     - name: Deploy to Tomcat
       run: copy ${env:GITHUB_WORKSPACE}\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
       
