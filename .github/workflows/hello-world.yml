@@ -8,7 +8,7 @@ jobs:
          - name: Printing my name
            run: echo "Hi Niranjan, Welcome to GitHub Actions"
          - name: Print GitHub Repository
-           run:  echo "${GITHUB_REPOSITORY}"
+           run:  echo $GITHUB_REPOSITORY
          - name: Print GitHub Workspace
            run:  echo ${{github.workspace}}
          - name: Print GitHub Runner Name
