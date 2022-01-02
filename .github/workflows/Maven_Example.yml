@@ -15,7 +15,7 @@ jobs:
       run: mvn clean install
     
     - name: Upload a build Artifacts with GitHub Action
-    - uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v2.3.1
       with:
            name: assets-for-upload
            path: target/*.war
