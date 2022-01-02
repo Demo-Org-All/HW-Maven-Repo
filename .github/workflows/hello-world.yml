@@ -10,11 +10,11 @@ jobs:
          - name: Print GitHub Repository
            run:  echo $env:GITHUB_REPOSITORY
          - name: Print GitHub Workspace
-           run:  echo ${{github.workspace}}
+           run:  echo $env:GITHUB_WORKSPACE
          - name: Print GitHub Runner Name
-           run:  echo ${{github.runner}}
+           run:  echo $env:GITHUB_RUNNER_NAME
          - name: Print GitHub Event Name
-           run:  echo ${{github.event}}
+           run:  echo $env:GITHUB_EVENT_NAME
            
            
            
