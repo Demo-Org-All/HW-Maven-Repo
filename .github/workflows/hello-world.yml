@@ -7,7 +7,7 @@ jobs:
          - name: Printing my name
            run: echo "Hi Niranjan, Welcome to GitHub Actions"
          - name: Print GitHub Workspace
-           run:  copy ${{github.workspace}}\target\HelloWorld-Maven.war e:\temp
+           run:  copy ${{github.workspace}}\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
            
            
            
