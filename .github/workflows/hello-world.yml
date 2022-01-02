@@ -6,6 +6,8 @@ jobs:
      steps:
          - name: Printing my name
            run: echo "Hi Niranjan, Welcome to GitHub Actions"
+         - name: Print GitHub Workspace
+           run:  echo ${{github.workspace}}
            
            
            
