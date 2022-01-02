@@ -14,5 +14,5 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     - name: Deploy to Tomcat
-      run: copy $env:GITHUB_WORKSPACE\HW-Maven-Repo\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
+      run: copy ${env:GITHUB_WORKSPACE}\HW-Maven-Repo\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
       
