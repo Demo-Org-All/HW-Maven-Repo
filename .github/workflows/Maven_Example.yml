@@ -14,7 +14,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     
-    - name: Upload a build Artifacts with GitHub Action
+    - name: Upload a Build Artifact 
       uses: actions/upload-artifact@v2.3.1
       with:
            name: assets-for-upload
