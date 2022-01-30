@@ -25,7 +25,7 @@ jobs:
              # Destination path
              path: e:\temp\rel
          - name: Archive the WAR file (Create ZIP  file for Release)
-           uses: papeloto/action-zip@v1
+           uses: vimtor/action-zip@v1
            with:
              files: target/HelloWorld-Maven.war
              dest: Hw-Maven-Repo.zip
