@@ -22,7 +22,7 @@ jobs:
            retention-days: 5
     
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.1.0
+      uses: actions/download-artifact@v2.0.10
       with:
            name: Download a Build Artifact
            # Destination path
