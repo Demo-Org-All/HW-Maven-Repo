@@ -7,7 +7,7 @@ jobs:
      steps:
          - name: Printing my name
            run: echo "Hi Niranjan, Welcome to GitHub Actions"
-         - name: Print GitHub Repository
+         - name: Print My GitHub Repository
            run:  echo $env:GITHUB_REPOSITORY
          - name: Print GitHub Workspace
            run:  echo $env:GITHUB_WORKSPACE
