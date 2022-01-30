@@ -20,7 +20,7 @@ jobs:
          - name: Print GitHub Runner OS
            run:  echo $env:RUNNER_OS
          - uses: jfrog/setup-jfrog-cli@v2
-         - run: jfrog --version
+         - run:  jfrog --version
            
            
            
