@@ -12,18 +12,4 @@ jobs:
          - name: Build with Maven
            run: mvn clean install
     
-         - name: Upload a Build Artifact 
-         - uses: actions/upload-artifact@v2.3.1
-           with:
-             name: assets-for-upload
-             path: target/*.war
-             retention-days: 5
-    
-         - name: Create Release
-         - uses: ncipollo/release-action@v1.9.0
-           with:
-             artifacts: "release_v1.zip,target/*.war"
-        
-         - name: Deploy to Tomcat
-           run: copy ${env:GITHUB_WORKSPACE}\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
-      
+       
