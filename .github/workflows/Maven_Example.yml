@@ -21,12 +21,7 @@ jobs:
            path: target/*.war
            retention-days: 5
     
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.0.10
-      with:
-           name: Download a Build Artifact
-           # Destination path
-           path: e:\temp\rel
+    
     
     - name: Create Release
     - uses: ncipollo/release-action@v1.9.0
