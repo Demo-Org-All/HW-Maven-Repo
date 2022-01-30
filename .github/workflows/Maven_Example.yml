@@ -11,5 +11,12 @@ jobs:
          - uses: actions/checkout@v2
          - name: Build with Maven
            run: mvn clean install
+           
+         - name: Upload a Build Artifact
+           uses: actions/upload-artifact@v2.3.1
+           with:
+             name: assets-for-upload
+             path: target/*.war
+             retention-days: 5
     
        
