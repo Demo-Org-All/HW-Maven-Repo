@@ -18,5 +18,10 @@ jobs:
              name: assets-for-upload
              path: target/*.war
              retention-days: 5
-    
+         - name: Download a Build Artifact
+           uses: actions/download-artifact@v2.1.0
+           with:
+             name: assets-for-download
+             # Destination path
+             path: e:\temp\rel
        
