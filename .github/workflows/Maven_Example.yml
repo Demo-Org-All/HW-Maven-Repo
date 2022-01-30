@@ -29,6 +29,13 @@ jobs:
            with:
              files: target/HelloWorld-Maven.war
              dest: Hw-Maven-Repo.zip
-       
+         - name: Create Github Release
+           id: create-new-release
+           uses: actions/create-release@v1
+           env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+           with:
+            tag_name: v${{ github.run_number }}
+            release_name: Release V${{ github.run_number }}
          - name: Deploy to Tomcat
            run: copy ${env:GITHUB_WORKSPACE}\target\HelloWorld-Maven.war E:\apache-tomcat-7.0.65\apache-tomcat-7.0.65\webapps\
