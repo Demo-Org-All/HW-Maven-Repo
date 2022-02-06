@@ -19,6 +19,6 @@ jobs:
         with:
            # Path where code and Dockerfile is located
            context: /home/ubuntu/example
-           tags: vniranjan72/hwmaven:${{ GITHUB.RUN.NUMBER }}
+           tags: vnmaven:${{ GITHUB.RUN.NUMBER }}
            push: true
            
