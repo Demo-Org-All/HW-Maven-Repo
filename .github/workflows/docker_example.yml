@@ -20,6 +20,6 @@ jobs:
            # Path where code and Dockerfile is located
            context: /home/ubuntu/example
            push: true
-           tags: vniranjan1972/vnmaven:${{GITUB_RUN_NUMBER}}
+           tags: vniranjan1972/vnmaven:GITUB_RUN_NUMBER
            
            
