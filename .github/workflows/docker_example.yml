@@ -19,6 +19,6 @@ jobs:
         with:
            # Path where code and Dockerfile is located
            context: /home/ubuntu/example
-           tags: ${{ env.GITHUB_REPOSITORY }}:latest
+           tags: ${{ GITHUB_REPOSITORY }}:latest
            push: true
            
