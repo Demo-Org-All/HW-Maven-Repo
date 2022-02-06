@@ -5,15 +5,13 @@ on:
     branches: [ master ]
 jobs:
   Env_Var_Check1:
-    env:
-     VN_KEY: ABCDEFGHIJKEY
+    
     runs-on: self-hosted
     steps: 
-      - name: Print Niranjan's Key
+      - name: Print Niranjan's Key in step 1
+        env:
+          VN_KEY: ABCDEFGHIJKEY
         run: echo "Niranjan's key is ${{env.VN_KEY}}"
 
-  Env_Var_Check2:
-    runs-on: self-hosted
-    steps: 
-      - name: Print Niranjan's Key
+      - name: Print Niranjan's Key in step 2
         run: echo "Niranjan's key is ${{env.VN_KEY}}"
