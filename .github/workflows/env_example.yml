@@ -11,4 +11,4 @@ jobs:
     runs-on: self-hosted
     steps: 
       - name: Print Niranjan's Key
-        run: echo Niranjan's key is ${{env.VN_KEY}}
+        run: echo "Niranjan's key is ${{env.VN_KEY}}"
