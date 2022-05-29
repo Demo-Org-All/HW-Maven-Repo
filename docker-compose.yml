@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    image: httpd
+    ports:
+      - 8080:80
+
+  database:
+    image: redis
