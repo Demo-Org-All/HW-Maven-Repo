@@ -12,6 +12,6 @@ RUN yum update -y
 RUN yum install java -y
 RUN java -version
 WORKDIR /opt/tomcat/webapps
-ADD '/home/ubuntu/jenkinsagent/workspace/First Maven Project/target/HelloWorld-Maven.war .'
+ADD /home/ubuntu/jenkinsagent/workspace/First Maven Project/target/HelloWorld-Maven.war .
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
