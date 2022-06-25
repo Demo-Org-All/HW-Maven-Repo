@@ -2,6 +2,6 @@ version: '3.8'
 
 services:
   web:
-    image: vniranjan1972/hworld_tomcat:V1
+    build: .
     ports:
-      - 8090:8080
+      - 9000:8080
