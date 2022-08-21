@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>HelloWorld-Maven</groupId>
-  <artifactId>HelloWorld-Maven</artifactId>
+  <artifactId>github</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>HelloWorld-Maven Maven Webapp</name>
@@ -15,6 +15,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/Demo-Org-All/HW-Maven-Repo</url>
+   </repository>
+</distributionManagement>
+
+
   <build>
     <finalName>HelloWorld-Maven</finalName>
   </build>
